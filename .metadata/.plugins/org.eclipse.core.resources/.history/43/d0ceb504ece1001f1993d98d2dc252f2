@@ -1,0 +1,75 @@
+package OOPConcepts;
+
+import java.util.Scanner;
+
+//import Java_Basics.BankAccount;
+
+public class BankApplication{
+	public static void main(String[] args) {
+		BankAccount account1 = new BankAccount();
+		account1.accountHolderName = "Novaneel Mandal";
+		account1.accountNumber = "ICICI00XXXX";
+		account1.balance = 2000;
+		
+		
+		
+		account1.checkBalance();
+//		
+//		account1.deposit(500);
+//		account1.checkBalance();
+//		account1.withdraw(500);
+//		account1.checkBalance();
+//		
+		
+		BankAccount account2 = new BankAccount("Roshni Agarwal", "HDFC00XXXX", 5000);
+		account2.checkBalance();
+		
+//		
+//		account2.deposit(500);
+//		account2.checkBalance();
+//		account2.withdraw(500);
+//		account2.checkBalance();
+		
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the name: ");
+		String name = sc.nextLine();
+		System.out.print("Enter the Account number: ");
+		String acc = sc.nextLine();
+		System.out.print("Enter the Balance: ");
+		int amt = sc.nextInt();
+		sc.nextLine();
+		
+		BankAccount account3 = new BankAccount(name, acc, amt);
+		account3.checkBalance();
+		
+		account3.deposit(500);
+		account3.checkBalance();
+		account3.withdraw(500);
+		account3.checkBalance();
+		
+		account3.DisplayDetails();
+		System.out.print("Enter new name: ");
+		String newname = sc.nextLine();
+		account3.setAccountHolderName(newname);
+		account3.DisplayDetails();
+		
+		System.out.print("Enter new account no.: ");
+		String newacc = sc.nextLine();
+		account3.setAccountNumber(newacc);
+		account3.DisplayDetails();
+		
+		System.out.print("Enter New Balance: ");
+		double newbalance = sc.nextInt();
+		account3.setBalance(newbalance);
+		account3.DisplayDetails();
+		
+		
+		
+		
+		
+		
+		
+		sc.close();
+	}
+}

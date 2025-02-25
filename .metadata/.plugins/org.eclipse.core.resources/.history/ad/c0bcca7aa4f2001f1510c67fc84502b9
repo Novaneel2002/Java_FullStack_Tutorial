@@ -1,0 +1,10 @@
+package com.ems.EMS.service;
+ 
+import org.springframework.stereotype.Service;
+ 
+@Service
+public class PayrollService {
+	//net salary
+	//print payroll receipt -> base salary, bonus, deductions, net salary
+
+}

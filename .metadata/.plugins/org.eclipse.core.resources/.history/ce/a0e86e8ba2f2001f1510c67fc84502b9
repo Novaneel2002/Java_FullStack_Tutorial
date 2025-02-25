@@ -1,0 +1,25 @@
+package com.ems.EMS.model;
+
+import java.util.List;
+
+public class EmployeeService {
+		private Employee employee;
+		
+		public void printEmpDetails() {
+			System.out.println("Employee Details : " + employee);
+		}
+		
+		public double calAnnualSalary() {
+			return employee.getSalary()*12;
+		}
+		
+		public List<String> getEmployeeSkills(){
+			return employee.getSkills();
+		}
+		
+		public boolean isEligiblePromotion() {
+			return employee.getDesignation().equalsIgnoreCase("Senior Developer");
+		}
+		
+		
+}

@@ -1,0 +1,11 @@
+package com.onlinebookshop.shop.service;
+
+import java.util.*;
+
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class OrderService {
+	
+}

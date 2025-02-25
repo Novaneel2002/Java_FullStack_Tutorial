@@ -1,0 +1,34 @@
+package Java_Basics;
+import java.util.*;
+public class Stringstut {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int i = 3;
+		while(i>0){
+			System.out.print("Enter Password: ");
+			String password = sc.next();
+			
+//			System.out.print(password);
+			
+			String Corr_Pass = "Admin123";
+			
+			if(password.equalsIgnoreCase(Corr_Pass)) {
+				System.out.print("Password is correct!");
+				break;
+			}else {
+				System.out.println("Password is incorrect!");
+			}
+			
+			
+			i--;
+			System.out.println("You have " + i + " chances left!");
+			
+		}
+		
+		
+		
+	}
+
+}

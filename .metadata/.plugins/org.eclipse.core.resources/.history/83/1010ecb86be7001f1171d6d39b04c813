@@ -1,0 +1,8 @@
+package Java8Features;
+
+public class StringJoinerExample {
+	
+	
+	StringJoiner sj = new StringJoiner(".");
+	sj
+}

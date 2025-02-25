@@ -1,0 +1,55 @@
+package Java_Basics;
+import java.util.*;
+public class Billing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int price = 0, quantity = 0;
+		int totalcost = 0;
+		while(true) {
+			System.out.print("Enter the price of the item ( press 0 to stop) : ");
+			price = sc.nextInt();
+			if(price == 0) {
+				break;
+			}
+			System.out.print("Enter the Quantity of the item: ");
+			quantity = sc.nextInt();
+			totalcost += (price*quantity);
+		}
+		
+//		System.out.print(totalcost);
+		int discountedprice=0;
+		if(totalcost >= 5000 && totalcost<= 10000) {
+			discountedprice = totalcost - (10*totalcost)/100;
+		}
+		else if(totalcost > 10000) {
+			discountedprice = totalcost - (20*totalcost)/100;
+		}
+		else {
+			System.out.print("");
+		}
+		
+		int shippingcost = 0;
+		if(totalcost >=7500) {
+			shippingcost = 0;
+		}else {
+			shippingcost = 250;
+		}
+			
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("    Output Bill    ");
+		System.out.println("----------------------------------");
+		System.out.println("Original Cost - " + totalcost);
+		System.out.println("Discounted Cost - " + discountedprice);
+		System.out.println("Shipping Cost - " + shippingcost);
+		
+		System.out.println("Final Cost of items - " + (discountedprice+shippingcost));
+//		System.out.println(totalcost);
+	}
+
+}

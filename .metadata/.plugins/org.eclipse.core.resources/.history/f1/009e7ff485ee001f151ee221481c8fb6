@@ -1,0 +1,64 @@
+package Junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class OrderService2Test {
+
+	private OrderService2 orderService2;
+	@BeforeEach //initialize orderservice2 before each test caser
+	public void setUp() {
+		orderService2 = new OrderService2();
+	}
+	@Test
+	public void TestCalPrice_ValidInputs() {
+		double price = 100.00;
+		int quantity = 2;
+		double expectedPrice = price*quantity*(1-orderService2.getDiscount());
+		assertEquals(expectedPrice, orderService2.calPrice(price, quantity));
+		//checking whether calPrice is calculating the price correctly or not
+	}
+	//Test case -> passing quantity = 0
+	@Test
+    void TestCalZeroQuantity() {
+        double total = orderService2.calPrice(100.00, 0);
+        assertEquals(0, total, "Total should be 0 when quantity is 0");
+    }
+	//Test case -> successfully placing order
+	//Sufficient Stocks
+	@Test
+	void TestSuccessfullyPlaced() {
+		boolean result = orderService2.placeOrder(5);
+		assertTrue(result, "Order should be placed successfully");
+		assertEquals(5, orderService2.getStock(), "Stock should be reduced by the ordered quantity");
+	}
+
+	//Test where price is negative
+	void TestNegativePrice() {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+            orderService2.calPrice(-100.00, 2);
+        });
+        assertEquals("Price cannot be negative.", e.getMessage());
+    }
+
+	//Boundary test case edge cases
+	//edge case -> quantity exactly same as stock
+	 @Test
+	    void TestPlaceOrderExactStock() {
+	        boolean result = orderService2.placeOrder(10);
+	        assertTrue(result, "Order should be placed successfully");
+	        assertEquals(0, orderService2.getStock(), "Stock should be 0 after ordering the exact stock amount");
+	    }
+ 
+ 
+	//edge case -> order just below stock limit i.e. 10
+	  @Test
+	    void TestPlaceOrderBelowStockLimit() {
+	        boolean result = orderService2.placeOrder(9);
+	        assertTrue(result, "Order should be placed successfully");
+	        assertEquals(1, orderService2.getStock(), "Stock should be reduced to 1 after ordering 9 out of 10");
+	    }
+
+
+}

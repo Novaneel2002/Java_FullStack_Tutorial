@@ -1,0 +1,40 @@
+package com.ems.EMS;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.ems.EMS.model.Employee;
+import com.ems.EMS.model.EmsAppConfig;
+import com.ems.EMS.model.HR;
+import com.ems.EMS.model.Payroll;
+import com.ems.EMS.model.Performance;
+import com.ems.EMS.service.EmployeeService;
+import com.ems.EMS.service.HRService;
+import com.ems.EMS.service.PayrollService;
+
+@SpringBootApplication
+public class EmsApplication {
+
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(EmsAppConfig.class);
+        
+        // Get EmployeeService bean
+        EmployeeService empService = context.getBean(EmployeeService.class);
+        System.out.println(empService.calAnnualSalary());
+
+        // Get HRService bean and display all employees
+        HRService hrService = context.getBean(HRService.class);
+        hrService.displayAllEmployees();
+
+        // Fetch an employee by ID using HRService
+        Employee emp = hrService.getEmpById(3);
+        System.out.println("Fetched Employee: " + emp);
+
+        // Get PayrollService bean and print payroll receipt
+        PayrollService payrollService = context.getBean(PayrollService.class);
+        Payroll payroll = context.getBean(Payroll.class);
+        payrollService.printPayrollReceipt(payroll.getBaseSalary(), payroll.getBonuses(), payroll.getDeductions());
+    }
+}

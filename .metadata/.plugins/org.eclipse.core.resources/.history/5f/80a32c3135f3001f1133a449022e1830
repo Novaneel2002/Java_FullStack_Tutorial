@@ -1,0 +1,95 @@
+package com.ems.EMS.model;
+ 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+ 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+ 
+@Configuration
+@ComponentScan(basePackages = "com.ems.EMS")
+@PropertySource("classpath:application.properties")
+
+public class EmsAppConfig {
+ 
+//    // Address Bean
+//    @Bean
+//    public Address address() {
+//        Address address = new Address();
+//        address.setStreet("123 Main St");
+//        address.setCity("New Delhi");
+//        address.setState("Delhi");
+//        address.setZipcode("143890");
+//        return address;
+//    }
+//    
+//    @Bean
+//    public Department department() {
+//        Department department = new Department();
+//        department.setDeptId(2);
+//        department.setDeptName("Operations");
+//        return department;
+//    }
+//    
+//    @Bean
+//    public List<String> skills() {
+//        return Arrays.asList("Java", "MySQL", "Spring Framework");
+//    }
+//    
+//    @Bean
+//    public Employee employee() {
+//        Employee employee = new Employee();
+//        employee.setId(3);
+//        employee.setName("Ankit Goyal");
+//        employee.setEmail("ankit@example.com");
+//        employee.setPhone("9876543210");
+//        employee.setSalary(50000);
+//        employee.setDesignation("Software Engineer");
+//        employee.setAddress(address());
+//        employee.setDepartment(department());
+//        employee.setSkills(skills());
+//        return employee;
+//    }
+//    
+//    @Bean
+//    public Payroll payroll() {
+//        Payroll payroll = new Payroll();
+//        payroll.setEmployeeId(3); // Ensure this matches the employee ID
+//        payroll.setBaseSalary(66000);
+//        payroll.setBonuses(5000);
+//        payroll.setDeductions(3000);
+//        return payroll;
+//    }
+//    
+//    @Bean
+//    public Performance performance() {
+//        Performance performance = new Performance();
+//        performance.setEmployee(3); // Use correct method name
+//        performance.setRating(4.9);
+//        performance.setFeedback("Excellent performance");
+//        performance.setProjectsHandled(Arrays.asList("Project A", "Project B", "Project C"));
+//        performance.setEligibleForpromotion(true); // Use correct method name
+//        return performance;
+//    }
+//    
+//    @Bean
+//    public Map<Integer, Employee> empRecords() {
+//        Map<Integer, Employee> records = new HashMap<>();
+//        records.put(1, employee());
+//        return records;
+//    }
+//    
+//    @Bean
+//    public HR hr() {
+//        HR hr = new HR();
+//        hr.setEmployeeRecords(empRecords());
+//        return hr;
+//    }
+	
+	
+	
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- bean definitions here -->
+<!--  Address Bean (Setter Injection) it will use setter methods in address class-->
+<bean id="address" class="com.ems.EMS.model.Address">
+<property name="street" value="123 Main St."></property>
+<property name="city" value="New Delhi"></property>
+<property name="state" value="Delhi"></property>
+<property name="zipcode" value="143890"></property>
+</bean>
+</beans>

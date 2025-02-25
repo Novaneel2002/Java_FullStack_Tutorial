@@ -1,0 +1,100 @@
+package OOPConcepts;
+
+import java.util.Scanner;
+
+public class BankApplication {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+//        // Creating an instance of BankAccount using default constructor
+//        BankAccount account1 = new BankAccount();
+//        account1.setAccountHolderName("Novaneel Mandal");
+//        account1.setAccountNumber("ICICI00XXXX");
+//        account1.setBalance(2000);
+//
+//        // Checking initial balance
+//        account1.checkBalance();
+//
+//        // Creating an instance of BankAccount using parameterized constructor
+//        BankAccount account2 = new BankAccount("Roshni Agarwal", "HDFC00XXXX", 5000);
+//        account2.checkBalance();
+        //----------------------------------------------------------------------------------
+        
+        
+        
+        
+        
+//        // Taking input from the user
+//        System.out.print("Enter the name: ");
+//        String name = sc.nextLine();
+//        System.out.print("Enter the Account number: ");
+//        String acc = sc.nextLine();
+//        System.out.print("Enter the Balance: ");
+//        double amt = sc.nextDouble();
+//        sc.nextLine();  // Consume newline
+//
+//        // Creating an instance of BankAccount with user input
+//        BankAccount account3 = new BankAccount(name, acc, amt);
+//        account3.checkBalance();
+
+        
+        
+        //----------------------------------------------------------------------------------
+        // Performing deposit and withdrawal operations
+//        account3.deposit(500);
+//        account3.checkBalance();
+//        account3.withdraw(500);
+//        account3.checkBalance();
+        
+        //----------------------------------------------------------------------------------
+//        
+//        
+//        
+//        account3.deposit(500.0,1000.0,5000.0);
+//        account3.checkBalance();
+//        
+//
+//        
+//        
+        
+        //----------------------------------------------------------------------------------
+//        // Displaying and updating account details
+//        account3.displayDetails();
+//        
+//        System.out.print("Enter new name: ");
+//        String newname = sc.nextLine();
+//        account3.setAccountHolderName(newname);
+//        
+//        System.out.print("Enter new account no.: ");
+//        String newacc = sc.nextLine();
+//        account3.setAccountNumber(newacc);
+//        
+//        System.out.print("Enter New Balance: ");
+//        double newbalance = sc.nextDouble();
+//        account3.setBalance(newbalance);
+//        
+//        account3.displayDetails();
+        //----------------------------------------------------------------------------------
+        
+        BankAccount p1 = new BankAccount("Novaneel", "ICICI", 10000);
+        BankAccount p2 = new BankAccount("Novaneel", "ICICI", 0);
+        
+        p1.displayDetails();
+        p2.displayDetails();
+        
+        p1.transfer(5000.00, p2);
+        
+        p1.displayDetails();
+        p2.displayDetails();
+        
+        p1.transfer(7000.00, p2);
+        
+        
+        p1.displayDetails();
+        p2.displayDetails();
+        
+        p1.transfer(-5000.00, p2);
+        
+        sc.close();
+    }
+}

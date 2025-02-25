@@ -1,0 +1,59 @@
+package Junit;
+ 
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.Duration;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+ 
+class OrderServiceTest {
+	OrderService os=new OrderService();
+ 
+//	@Test
+//	void test() {
+//		double total = os.calPrice(100.00, 2);
+//		assertEquals(180,total, "total should be 180 after 10% discount");
+//		//fail("Not yet implemented");
+//	}
+// 
+	
+	@Test
+	void testSufficientStock() {
+	    OrderService os = new OrderService();
+	    boolean result = os.placeOrder(5);
+	    assertTrue(result, "Order should be placed successfully");
+	    assertEquals(5, os.getStock(), "Stock should be reduced by the ordered quantity");
+	}
+	
+	@Test
+	void testInsufficientStock() {
+	    OrderService os = new OrderService();
+	    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+	        os.placeOrder(12); // Trying to place an order for 12 units when only 10 are available
+	    });
+	    assertEquals("Insufficient stock", exception.getMessage(), "Exception message should match");
+	}
+
+	
+	@Test
+	void testCalTotalWithZeroQuantity() {
+	    OrderService os = new OrderService();
+	    double total = os.calPrice(100.00, 0); // Calculating total price with quantity 0
+	    assertEquals(0, total, "Total should be 0 when quantity is 0");
+	}
+	
+	
+	@Test
+	@Timeout(1)
+	void testTimeout() {
+	    OrderService os = new OrderService();
+	    assertTimeout(Duration.ofSeconds(1), () -> {
+	        os.calPrice(100.00, 2); // Calculating price for 2 units with a unit price of 100.00
+	    }, "Method should complete within 1 second");
+	}
+
+
+	
+	
+}

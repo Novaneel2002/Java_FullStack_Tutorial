@@ -1,0 +1,68 @@
+package com.ems.EMS.model;
+ 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+ 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+ 
+@Configuration
+@ComponentScan(basePackages = "com.ems.EMS")
+public class EmsAppConfig {
+ 
+	//Address Bean
+	@Bean
+	public Address address() {
+		Address address = new Address();
+		address.setStreet(null);
+		return address;
+	}
+	@Bean
+	public Department department() {
+		Department department = new Department();
+		department.setDeptId(2);
+		department.setDeptName("Operations");
+		return department;
+	}
+	@Bean
+	public List<String> skills() {
+		return Arrays.asList("Java", "MySQL", "Spring Framerwork");
+	}
+	@Bean
+	public Employee employee() {
+		Employee employee = new Employee();
+		employee.setEmpId(3);
+		employee.setAdddress(address()); //inject address bean -> just pass the name address
+		employee.setDepartment(department());
+		employee.setSkills(skills());
+		return employee;
+	}
+	@Bean
+	public Payroll payroll() {
+		Payroll payroll = new Payroll();
+		payroll.setBaseSalary(66000);
+		return payroll;
+	}
+	@Bean
+	public Performance performance() {
+		Performance performance = new Performance();
+		performance.setEmployeeId(0);
+		performance.setRating(4.9);
+		return performance;
+	}
+	@Bean
+	public Map<Integer, Employee> empRecords() {
+		Map<Integer, Employee> records = new HashMap<>();
+		records.put(1, employee());
+		return records;
+	}
+	@Bean
+	public HR hr() {
+		HR hr = new HR();
+		hr.setEmployeeRecords(empRecords());
+		return hr;
+	}
+}

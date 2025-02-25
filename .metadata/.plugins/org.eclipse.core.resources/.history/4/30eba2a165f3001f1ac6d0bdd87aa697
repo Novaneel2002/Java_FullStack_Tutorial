@@ -1,0 +1,17 @@
+spring.application.name=shop
+server.port=9090  
+spring.datasource.url = jdbc:mysql://localhost:3306/onlinebookshop
+spring.datashource.username = root
+spring.datasource.password = genpact@123456789
+spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
+
+
+
+#Enable SQL Script for Table Creation - enables sql scripts
+spring.sql.init.mode = ALWAYS
+ 
+#Show SQL Queries in Console
+spring.jpa.show-sql = true
+ 
+#SQL initialization platform - specifies that database is mysql
+sqping.sql.init.platform = mysql

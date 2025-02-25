@@ -1,0 +1,24 @@
+package com.ems.EMS.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PayrollService {
+    
+    // Calculate net salary
+    public double calculateNetSalary(double baseSalary, double bonuses, double deductions) {
+        return baseSalary + bonuses - deductions;
+    }
+    
+    // Print payroll receipt
+    public void printPayrollReceipt(double baseSalary, double bonuses, double deductions) {
+        double netSalary = calculateNetSalary(baseSalary, bonuses, deductions);
+        
+        System.out.println("Payroll Receipt:");
+        System.out.println("----------------");
+        System.out.println("Base Salary: " + baseSalary);
+        System.out.println("Bonuses: " + bonuses);
+        System.out.println("Deductions: " + deductions);
+        System.out.println("Net Salary: " + netSalary);
+    }
+}

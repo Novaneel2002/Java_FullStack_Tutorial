@@ -1,0 +1,19 @@
+package Java8Features;
+import java.util.*;
+public class StringJoinerExample {
+	
+	public static void main(String[] args) {
+		StringJoiner sj = new StringJoiner(" ");
+		sj.add("Name1");
+		sj.add("is");
+		sj.add("Name2");
+		System.out.println(sj.toString());
+		StringJoiner sj2 = new StringJoiner(" , ","\"" ,"\"");
+		sj2.add("Name1");
+		sj2.add("is");
+		sj2.add("Name2");
+		System.out.println(sj2.toString());
+	}
+	
+	
+}
