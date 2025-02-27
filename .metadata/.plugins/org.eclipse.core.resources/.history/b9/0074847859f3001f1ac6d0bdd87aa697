@@ -1,8 +1,0 @@
-package com.onlinebookshop.shop.repository;
-
-
-@Repository
-public class AuthorRepository {
-	private final JdbcTemplaye jdbcTemplate;
-	
-}

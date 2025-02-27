@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;MovieTicketBooking.WebRowSet&apos; to &apos;WebRowSetApp&apos;&#x0D;&#x0A;- Original project: &apos;MovieTicketBookingSystem&apos;&#x0D;&#x0A;- Original element: &apos;MovieTicketBooking.WebRowSet&apos;&#x0D;&#x0A;- Renamed element: &apos;MovieTicketBooking.WebRowSetApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;WebRowSet&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;MovieTicketBooking{WebRowSet.java[WebRowSet" matchStrategy="1" name="WebRowSetApp" qualified="false" references="true" similarDeclarations="false" stamp="1739530744481" textual="false" version="1.0"/>
-</session>

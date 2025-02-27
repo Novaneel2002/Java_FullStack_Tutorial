@@ -1,9 +1,0 @@
-package com.onlinebookshop.shop.repository;
-
-public class BookRepository {
-	//Create a new Book
-	//Read -> get all books
-	//Read -> get book by id
-	//update book -> find By Id
-	//delete book -> delete by Id
-}
